@@ -1,0 +1,493 @@
+/* Global Reset */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    padding: 1.25rem 3rem; /* 20px 50px */
+    height: 70px;
+    width: 100%;
+    background: linear-gradient(90deg, #000000, #1a1a1a, #000000);
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header:hover {
+    background-color: #292944;
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+}
+
+header:hover a {
+    color: #1e90ff;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: #ffffff;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+/* Hover underline animation */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: aqua;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5);
+    transform: scale(1.1);
+    text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+}
+
+/* Icon Hover Effect */
+.material-symbol-outline {
+    font-size: 1.5rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.material-symbol-outline:hover {
+    color: #00ffe7;
+    transform: rotate(20deg) scale(1.2);
+}
+
+/* Buttons */
+button {
+    color: #00ffe7;
+    background-color: #1e1e2f;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #00ffe7;
+    color: #121212;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Input */
+input[type="text"] {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: #222;
+    color: #fff;
+}
+
+/* Header List */
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 100px;
+}
+
+/* Banner Section */
+#banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+#banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    animation: zoomIn 1.5s ease forwards;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Banner outer shadow */
+}
+
+#banner:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.7);
+}
+
+h1, h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    text-align: center;
+    font-weight: bold;
+    z-index: 2;
+    opacity: 0;
+    animation: slideFadeIn 1s ease forwards;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Slight background for readability */
+    backdrop-filter: blur(5px); /* Glass effect */
+    box-shadow: 0 0 20px rgba(0,0,0,0.6); /* Outer shadow */
+}
+
+h1 {
+    top: 40%;
+    font-size: 36px;
+    margin: 10px 0;
+    color: rgb(193, 57, 57);
+    animation-delay: 0.5s;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.9); /* Strong text shadow */
+}
+
+h2 {
+    top: 55%;
+    font-size: 24px;
+    margin: 10px 0;
+    color: rgb(169, 69, 69);
+    animation-delay: 1s;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+#banner:hover h1, 
+#banner:hover h2 {
+    transform: translateX(-50%) scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 0, 0, 0.7);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+}
+
+/* Shine effect */
+h1::after, h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.3) 100%);
+    transform: skewX(-20deg);
+}
+
+#banner:hover h1::after, 
+#banner:hover h2::after {
+    animation: shine 0.8s forwards;
+}
+
+/* Animations */
+@keyframes slideFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+
+/* Slider Section */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.slides {
+    display: flex;
+    width: calc(100% * 5); /* Adjust to the total number of images */
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: calc(100% / 5); /* Adjust to the total number of images */
+    flex-shrink: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Dots */
+.dots {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dots span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dots span.active {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.dots span:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* General styles for the product display */
+/* Grid Layout */
+#products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+}
+
+/* Product Card */
+.product-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    border-radius: 12px;
+}
+
+
+
+/* Product Name */
+.product-name {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Product Price */
+.product-price {
+    margin: 0;
+    font-size: 16px;
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* Cart Button (No Hover Effect) */
+.cart-btn {
+    display: flex;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #2ecc71;
+    color: rgb(61, 17, 17);
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    left: 70%;
+}
+
+/* Footer */
+footer {
+    background: #1e1e2f;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-top: 3px solid #00ffe7;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer:hover {
+    background-color: #292944;
+    box-shadow: 0 6px 25px rgba(0, 255, 255, 0.3);
+}
+
+/* Footer Links */
+footer a {
+    color: #00ffe7;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+    margin: 10px;
+}
+
+/* Footer Link Hover */
+footer a:hover {
+    color: #ff6f61;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+/* Social Media Icons */
+footer .social-icons i {
+    margin: 0 15px;
+    font-size: 2rem;
+    color: #00ffe7;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect on Social Icons */
+footer .social-icons i:hover {
+    transform: rotate(20deg) scale(1.2);
+    color: #ff6f61;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 105, 180, 0.6);
+}
+
+/* Footer Divider Line */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 3px;
+    background: #00ffe7;
+    transform: translateX(-50%);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Pulse Animation for Divider */
+@keyframes pulse {
+    0% {
+        width: 50%;
+        opacity: 0.6;
+    }
+    50% {
+        width: 60%;
+        opacity: 1;
+    }
+    100% {
+        width: 50%;
+        opacity: 0.6;
+    }
+}
+
+/* Footer Text Animation */
+footer p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #bbb;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards 1s;
+}
+
+/* Footer Text Fade-in Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+#cart-section {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+#cart-section h2 {
+  margin-bottom: 10px;
+}
+
+#cart-items li {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
