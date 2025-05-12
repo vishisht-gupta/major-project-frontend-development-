@@ -26,18 +26,18 @@ function addToCart(product) {
 
 // Sample product data
 const products = [
-  { name: 'Stylish T-Shirt', price: 499 },
-  { name: 'Trendy Jeans', price: 999 },
-  { name: 'Running Shoes', price: 1499 },
-  { name: 'Wrist Watch', price: 1999 },
-  { name: 'Leather Wallet', price: 799 },
-  { name: 'Sports Cap', price: 299 },
-  { name: 'Backpack Bag', price: 1199 },
-  { name: 'Designer Sunglasses', price: 1599 },
-  { name: 'Formal Shirt', price: 899 },
-  { name: 'Casual Shorts', price: 699 },
-  { name: 'Fitness Tracker', price: 2499 },
-  { name: 'Earbuds', price: 3499 }
+  { name: 'red skirt', price: 499 },
+  { name: 'blue shirt', price: 999 },
+  { name: 'formal shirt', price: 1499 },
+  { name: 'running shoes', price: 1999 },
+  { name: 'casual Shorts', price: 799 },
+  { name: 'diamond earing', price: 299 },
+  { name: 'black frock', price: 1199 },
+  { name: 'amazon google alexa', price: 1599 },
+  { name: 'ladies red purse', price: 899 },
+  { name: 'laptop', price: 60299 },
+  { name: 'stylish weather resistant water bottle', price: 2499 },
+  { name: 'el drado mens perfume 100ml', price: 3499 }
 ];
 
 // Add event listeners to product buttons
